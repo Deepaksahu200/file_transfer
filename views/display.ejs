@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P file Sharing App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>P2P Realtime File Sharing Online</title>
+   
+
+      </head>
+      <body>
+        <div class="container">
+          <h1 class="text-center">
+            Your File is Ready (Link will Expire After 24 Hours)
+          </h1>
+          <br><br>
+          <input type="text" id=" " hidden value="<%=path%>" />
+          <h2 class="text-center">File Info</h2>
+          <br>
+          <h3 class="text-center"><%=path%></h3>
+          <br><br>
+          <input type="text" value="<%=path%>" id="path" hidden />
+          <div class="form-group container">
+            <button onclick="download()" class="btn btn-success btn-block">
+              Download File
+            </button>
+          </div>
+        </div>
+      </body>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        function download() {
+          window.open("/download?path=/public/" + $("#path").val());
+          location.reload();
+        }
+      </script>
+    </html>
